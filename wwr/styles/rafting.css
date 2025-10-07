@@ -196,7 +196,7 @@ section.history {
 .adventure-grid {
     display: flex;
     justify-content: center;
-    grap: 20px;
+    gap: 20px;
     flex-wrap: wrap;
     padding: 40px 20px;
 }
@@ -261,7 +261,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff
+    background-color: #fff;
     border-top: 2px solid #ccc;
 }
 
