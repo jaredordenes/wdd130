@@ -1,15 +1,16 @@
 :root{
-    --primary-color: #055a05;
+    --primary-color: #c5ad7a;
     --secondary-color: #4b4420;
-    --accent1-color: #264653;
+    --accent1-color: #4b4420;
     --accent2-color: #fffffd;
-    --heading-font: arial, Helvetica, sans-serif;
+    --heading-font: 'Supernova', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 1.3rem;
 }
 
 body {
@@ -18,28 +19,50 @@ body {
 }
 
 header, main, footer {
-    width: 840px;
+    width: 100%;
     margin: 0 auto;
 }
 
 header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
+    background-color: var(--accent1-color);
+    background: linear-gradient(
+    to bottom,
+    rgba(77, 70, 33, 0.9) 0%,
+    rgba(77, 70, 33, 0.7) 40%,
+    rgba(77, 70, 33, 0.3) 80%,
+    rgba(77, 70, 33, 0) 100%
+    );
+    opacity: ;
+    z-index: 10;
+}
+
+.logo {
+    background-color: var(--accent1-color);
+    margin: 20px;
+    padding: 2px;
+    border-radius: 100px;
+    display: inline-block;
+
 }
 
 header img {
-    max-width: 120px;
+    max-width: 5rem;
     height: auto;
 }
 
 nav ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     margin: 0;
     padding: 0;
+    color: var(--primary-color);
 }
 
 nav ul li {
@@ -48,36 +71,42 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--accent2-color);
     font-weight: bold;
+    font-size: 2rem;
 }
 
 main {
-    max-width: 1000px;
+    max-width: auto;
     margin:0 auto;
-    padding: 20px;
+    padding-top: 7rem;
 }
 
 section.contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 1.5rem;
+    margin-top: 6rem;
     margin-bottom: 4rem;
+    padding: 1rem;
 }
 
 .contact .info {
     text-align: center;
-    color: var(--primary-color)
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 .contact .content {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 2rem;
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
 }
 
 .contact h2 {
@@ -92,22 +121,20 @@ section.contact {
 }
 
 .contact .map iframe {
-    width: 100%;
-    height: 450px;
-    width: 450px;
+    width: 350px;
+    height: 300px;
     border: none;
     border-radius: 8px;
 }
 
 .contact quiz-form {
     flex: 1;
+    max-width: 350px;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 1rem;
     border-radius: 8px;
-    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,6 +152,7 @@ form.quiz-form {
     display: flex;
     flex-direction: column;
 }
+
 
 .quiz-item label {
     font-weight: bold;
@@ -164,13 +192,19 @@ button:hover {
 }
 
 h1, h2 {
-    font-family: var(--heading-font);
+    font-family: 
     color: var(--primary-color);
 }
 
 nav, p, section, article {
     margin: 16px;
     padding: 8px;
+}
+
+.trip-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:10px;
 }
 
 section.history {
@@ -189,7 +223,7 @@ section.history {
 }
 
 .history-grid img {
-    max-width: 200px;
+    width: 200px;
     border-radius: 8px;
 }
 
@@ -212,12 +246,13 @@ section.history {
 .adventure-grid img {
     width: 100px;
     border-radius: 8px;
+    gap: 10px;
 }
 
 .adventure-grid figcaption {
     margin-top: 8px;
     font-size: 14px;
-    color: #055a05;
+    color: var()
 }
 
 .socialmedia a {
@@ -226,34 +261,119 @@ section.history {
 
 .hero {
     position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .hero img {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: cover;
+    background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.3) 90%,
+    rgba(255, 255, 255, 0) 20%
+    );
+}
+
+.main-content-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.layout-image {
+    width: 100%;
 }
 
 h1 {
     position: absolute;
-    top: 20px;
+    top: 9rem;
     width: 100%;
     padding: 1rem;
     text-align: center;
-    opacity: 0.8;
-    background-color: var(--accent1-color);
     color: #fffffd;
+    font-size: 3rem;
 }
 
 .hero article img {
     float: right;
-    width: 170px;
+    width: 300px;
     border: 1px #4b4420 solid;
     box-shadow: 0 0 30px rgb(85, 82, 82);
 }
 
 article {
-    float: inline-end;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #fffffd;
+    opacity: 0.8;
+}
+
+.trip-card {
+    float: none;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: #fffffd;
+    opacity: 0.8;
+}
+
+.cta-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    background-color: var(--primary-color);
+    color: var(--accent2-color);
+}
+
+.button.cta {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 15px 30px;
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.trip-table-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.trips-table {
+    width: 80%; 
+    margin: 20px auto; 
+    border-collapse: collapse; 
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trips-table th, .trips-table td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.trips-table thead tr {
+    background-color: var(--accent1-color); 
+    color: var(--accent2-color); 
+}
+
+.trips-table tbody tr:nth-child(even) {
+    background-color: #f4f4f4; 
+}
+
+.trips-table tbody tr:hover {
+    background-color: #ddd; 
+    cursor: default;
 }
 
 footer {
@@ -261,12 +381,12 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
     border-top: 2px solid #ccc;
 }
 
 footer p {
     margin: 0px;
+    font-size: 15px;
 }
 
 footer .socialmedia img {
